@@ -1,0 +1,50 @@
+2026-11-20 20:59:15,304 - INFO - Operacion 1 realizada: Registro de cliente
+2026-11-20 20:59:15,305 - ERROR - Error en la operacion 2: Registro de cliente con datos incorrectos
+Traceback (most recent call last):
+  File "C:\Users\kp085\OneDrive\Documentos\Universidad\Septimo semestre\PROGRAMACIÓN\Rac 3 fase 4\Solucion\Software-Fj-trabajo-final-\main.py", line 23, in ejecutar_operacion
+    resultado = accion()
+  File "C:\Users\kp085\OneDrive\Documentos\Universidad\Septimo semestre\PROGRAMACIÓN\Rac 3 fase 4\Solucion\Software-Fj-trabajo-final-\main.py", line 56, in cliente_incorrecto
+    return Cliente(
+        "C002",
+    ...<2 lines>...
+        "3136851369"
+    )
+  File "C:\Users\kp085\OneDrive\Documentos\Universidad\Septimo semestre\PROGRAMACIÓN\Rac 3 fase 4\Solucion\Software-Fj-trabajo-final-\entidades.py", line 21, in __init__
+    raise ValueError("El correo ingresado no es valido")
+ValueError: El correo ingresado no es valido
+2026-11-20 20:59:15,308 - INFO - Operacion 3 realizada: Creacion de servicio de sala
+2026-11-20 20:59:15,308 - INFO - Operacion 4 realizada: Creacion de alquiler de equipo
+2026-11-20 20:59:15,308 - INFO - Operacion 5 realizada: Creacion de asesoria
+2026-11-20 20:59:15,310 - INFO - Operacion 6 realizada: Creacion de reserva exitosa
+2026-11-20 20:59:15,312 - INFO - Operacion 7 realizada: Confirmacion de reserva
+2026-11-20 20:59:15,312 - ERROR - Error en la operacion 8: Reserva con cantidad incorrecta
+Traceback (most recent call last):
+  File "C:\Users\kp085\OneDrive\Documentos\Universidad\Septimo semestre\PROGRAMACIÓN\Rac 3 fase 4\Solucion\Software-Fj-trabajo-final-\main.py", line 23, in ejecutar_operacion
+    resultado = accion()
+  File "C:\Users\kp085\OneDrive\Documentos\Universidad\Septimo semestre\PROGRAMACIÓN\Rac 3 fase 4\Solucion\Software-Fj-trabajo-final-\main.py", line 105, in reserva_incorrecta
+    return Reserva("R002", cliente, equipo, 0)
+  File "C:\Users\kp085\OneDrive\Documentos\Universidad\Septimo semestre\PROGRAMACIÓN\Rac 3 fase 4\Solucion\Software-Fj-trabajo-final-\reservas.py", line 15, in __init__
+    raise ErrorReserva("La cantidad debe ser mayor que cero")
+excepciones.ErrorReserva: La cantidad debe ser mayor que cero
+2026-11-20 20:59:15,315 - INFO - Operacion 9 realizada: Cancelacion de reserva
+2026-11-20 20:59:15,315 - ERROR - Error en la operacion 10: Procesamiento de reserva cancelada
+Traceback (most recent call last):
+  File "C:\Users\kp085\OneDrive\Documentos\Universidad\Septimo semestre\PROGRAMACIÓN\Rac 3 fase 4\Solucion\Software-Fj-trabajo-final-\reservas.py", line 55, in procesar
+    raise ErrorReserva(
+        "No se puede procesar una reserva cancelada"
+    )
+excepciones.ErrorReserva: No se puede procesar una reserva cancelada
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kp085\OneDrive\Documentos\Universidad\Septimo semestre\PROGRAMACIÓN\Rac 3 fase 4\Solucion\Software-Fj-trabajo-final-\main.py", line 23, in ejecutar_operacion
+    resultado = accion()
+  File "C:\Users\kp085\OneDrive\Documentos\Universidad\Septimo semestre\PROGRAMACIÓN\Rac 3 fase 4\Solucion\Software-Fj-trabajo-final-\main.py", line 118, in procesar_reserva_cancelada
+    return reserva.procesar()
+           ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kp085\OneDrive\Documentos\Universidad\Septimo semestre\PROGRAMACIÓN\Rac 3 fase 4\Solucion\Software-Fj-trabajo-final-\reservas.py", line 60, in procesar
+    raise ErrorReserva(
+        "No fue posible procesar la reserva"
+    ) from error
+excepciones.ErrorReserva: No fue posible procesar la reserva
